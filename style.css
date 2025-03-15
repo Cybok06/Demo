@@ -24,7 +24,7 @@ header {
   align-items: center;
   padding: 20px 50px;
   position: absolute;
-  top: -60px;
+  top: -57px;
   left: -15px;
   right: 0;
   width: 100%;
@@ -38,7 +38,9 @@ header {
 
 nav {
   display: flex;
-  gap: 30px;
+  gap: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  
 }
 
 nav a {
@@ -50,6 +52,7 @@ nav a {
 
 nav a:hover {
   text-decoration: underline;
+  color: #003bb3;
 }
 
 body.light-mode nav a {
@@ -88,6 +91,7 @@ body.light-mode .theme-toggle {
   justify-content: center;
   text-align: center;
   margin-top: 0;
+  
 }
 
 .overlay {
@@ -215,7 +219,6 @@ body.light-mode section h2, body.light-mode section p {
 
 .about h2,
 .about p {
-  border: 2px solid white; /* Removed the border for About Us section */
   padding: 15px;
 }
 
@@ -228,14 +231,10 @@ body.light-mode section h2, body.light-mode section p {
 
 .why-choose-us h2,
 .why-choose-us p {
-  border: 2px solid white; /* Removed the border for Why Choose Us section */
   padding: 15px;
 }
 
-.services h2,
-.services p {
-  border: 2px solid white;
-}
+
 
 /* Who We Are Section */
 .who-we-are {
@@ -470,4 +469,53 @@ footer {
 
 form {
   color: black;
+}
+.herosec {
+  background-image: url(hero.jpg);
+  background-repeat: no-repeat;  /* Prevent it from repeating */
+  background-position: center;   /* Center the image */
+
+}
+.herosec1 {
+  position: relative;
+  color: white; /* Text color */
+  z-index: 1;
+  text-align: center; /* Optional */
+  padding: 50px;
+}
+
+.herosec1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(hero.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  
+  transform: rotate(180deg); /* Flips the background image */
+  z-index: -1; /* Puts it behind the text */
+}
+.about, .services , .why-choose-us {
+  position: relative;
+  padding-bottom: 20px; /* Space for the border */
+}
+
+.about::after , .services::after ,.why-choose-us::after{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%); /* Center align the line */
+  width: 80%;
+  height: 0.6px; /* Thin border */
+  background-color: white; /* Black border color (can be changed) */
+  opacity: 0.5;
+}
+.wwa{
+  width: 100px;
+  height: 125px;
 }
